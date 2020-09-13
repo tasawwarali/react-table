@@ -1,0 +1,207 @@
+@import '../Global.scss';
+
+@import '../Global.scss';
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.action-panel {
+  margin: 20px 0;
+  animation: slide-up 0.3s ease;
+  .panel-heading {
+    border-bottom: 1px solid $border-gray;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    h2 {
+      @include heading2-style;
+    }
+    .filter-save {
+      position: relative;
+      margin-right: auto;
+      background-image: url(https://multi-reports-frontend.s3-us-west-2.amazonaws.com/assets/images/edit-pencil-icon.svg);
+      background-position: right;
+      background-repeat: no-repeat;
+      background-size: 14px;
+    }
+    .filter-save-name {
+      margin-left: 5px;
+      width: 220px;
+      @include input-transition;
+    }
+    .panel-actions {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+    }
+  }
+  .panel-action-btn {
+    padding: 5px 15px;
+    color: #6600cc;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: default;
+    display: flex;
+    align-items: center;
+    opacity: 0.4;
+    &.panel-close,
+    &.panel-expand {
+      opacity: 0.7;
+      cursor: pointer;
+      img {
+        height: auto;
+        max-height: 14px;
+        max-width: 20px;
+      }
+    }
+    &.text-icon-btn img {
+      max-height: 14px;
+      margin-right: 4px;
+    }
+    &.panel-close:hover,
+    &.panel-expand:hover {
+      opacity: 1;
+    }
+    &.apply-btn {
+      border-right: 1px solid #ddd;
+    }
+  }
+  .panel-body {
+    padding: 15px;
+    width: auto;
+    .flex-row {
+      margin: 10px 0;
+    }
+    .panel-section-description:not(:first-of-type) {
+      margin-top: 20px;
+    }
+  }
+}
+
+.action-panel.has-inputs .panel-action-btn.apply-btn,
+.action-panel.has-inputs .panel-action-btn.save-new-btn {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.action-panel.has-inputs.has-id.has-name .panel-action-btn.save-edits-btn {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.checkbox-option-description {
+  display: inline-block;
+  max-width: 316px;
+  font-style: italic;
+  font-size: 12px;
+  margin-top: 10px;
+  padding-left: 17px;
+}
+
+.toggle-switch-container {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  color: #d9d9d9;
+  font-size: 14px;
+  font-family: Helvetica Neue, helvetica, arial, verdana, sans-serif;
+  &:hover {
+    cursor: pointer;
+  }
+  .checked {
+    color: #6600cc;
+  }
+  .status-switch {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 1px;
+    color: #6600cc;
+    padding: 0px;
+    margin: 0 5px;
+  }
+
+  /* Hide default HTML checkbox */
+  .status-switch input {
+    display: none;
+  }
+  .status-switch .slider,
+  .status-switch .slider-line {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #6600cc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  .status-switch .slider:before {
+    position: absolute;
+    content: '';
+    height: 10px;
+    width: 10px;
+    left: 0px;
+    bottom: -4px;
+    background-color: #fff;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    border: 1px solid #6600cc;
+  }
+  .status-switch input:checked + .slider {
+    left: 26px;
+  }
+  //.status-switch input:focus + .slider {
+  //  -webkit-box-shadow: 0px 0px 17px -1px rgba(184,184,184,1);
+  //  -moz-box-shadow: 0px 0px 17px -1px rgba(184,184,184,1);
+  //  box-shadow: 0px 0px 17px -1px rgba(184,184,184,1);
+  //}
+  .status-switch input:checked + .slider:before {
+    -webkit-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+  .status-switch .slider.round {
+    border-radius: 0px;
+  }
+  .status-switch .slider.round:before {
+    border-radius: 50%;
+  }
+}
+
+.react-datepicker__input-container {
+  background-image: url(https://multi-reports-frontend.s3-us-west-2.amazonaws.com/assets/images/calendar-icon.png) !important;
+  background-size: 19px !important;
+  background-position: 7px 8px !important;
+  background-repeat: no-repeat !important;
+  input {
+    height: 33px !important;
+    padding-left: 33px !important;
+    color: #4a4a4a !important;
+  }
+}
+
+.table-error-row {
+  background-color: #ffed8a;
+}
+
+#side-menu li {
+  .react-filter-item .te-menu-item-options-btn {
+    left: -5px !important;
+    top: -5px !important;
+  }
+  .popover .popover-content .menu-item-action-btn {
+    color: #4a4a4a;
+  }
+}

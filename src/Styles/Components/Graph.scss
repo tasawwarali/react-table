@@ -1,0 +1,94 @@
+@import "../Global.scss";
+
+$firstGraphColor: #6600cc;
+$secondGraphColor: #2ad03d;
+$thirdGraphColor: #ff3366;
+
+#graph {
+  height: 180px;
+  max-height: 180px;
+}
+
+.graph-options {
+  padding-left: 40px;
+  margin-bottom: 15px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.graph-container {
+  padding: 10px;
+}
+
+.graph-actions {
+  margin-left: auto;
+}
+
+.graph-tags-container {
+  font-size: 12px;
+  display: flex;
+  flex-wrap: wrap;
+
+  .selectbox ul {
+    overflow-x: auto;
+  }
+
+  .selectbox.selectbox--rounded {
+    min-height: auto;
+    margin-right: 0;
+    margin-bottom: -6px;
+
+    .selectbox__button {
+      padding: 0 !important;
+      box-shadow: unset !important;
+
+      &:hover {
+        box-shadow: unset !important;
+      }
+    }
+
+    &.open {
+      .selectbox__button {
+        background-color: transparent;
+        box-shadow: unset !important;
+      }
+    }
+
+    &.hidden {
+      .selectbox__button {
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+.c3-line {
+  stroke-width: 3px !important;
+}
+
+.c3 path.domain,
+.c3 g.tick line:first-child {
+  display: none !important;
+}
+
+.c3-xgrid,
+.c3-ygrid,
+.c3-ygrid-lines .c3-ygrid-line line {
+  stroke-dasharray: 0 !important;
+  stroke: #e6e6e6 !important;
+}
+
+.c3-xgrid-focus {
+  display: none !important;
+}
+
+.c3-axis-y text,
+.c3-axis-x text,
+.c3-axis-y2 text {
+  fill: #003b49 !important;
+  font-family: Roboto !important;
+  font-weight: 400 !important;
+  font-size: 11px !important;
+}
