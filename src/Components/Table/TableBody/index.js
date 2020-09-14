@@ -5,6 +5,7 @@ export default function TableBody(props) {
   const summery_row = props.summery_data.map((item) => (
     <tr className="summary-row" key="summery">
       <td
+        key="sum_checkbox"
         className="freeze-col col-checkbox"
         height="26"
         style={{ zIndex: "99" }}
@@ -23,6 +24,7 @@ export default function TableBody(props) {
   const rows = props.report_data.map((item) => (
     <tr key={item.id}>
       <td
+        key={item.id + "_checkbox"}
         className="col-checkbox freeze-col"
         height="46"
         style={{ zIndex: "99" }}
